@@ -1,0 +1,47 @@
+#include <HCSR04.h>
+#include <Servo.h>
+
+#define echoPin 2
+#define trigPin 3
+
+Servo myServo;
+int suara=4;
+
+void setup() {
+Serial.begin(9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+pinMode(suara,OUTPUT);
+digitalWrite(suara,HIGH);
+myServo.attach(5); 
+}
+
+void loop() {
+long duration, distance;
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance = (duration/2) / 29.1;
+Serial.println(distance);
+
+if(distance <=20) {
+  delay(100);
+  myServo.write(0);
+  delay(4000);
+  digitalWrite(suara,LOW);
+  delay(100);
+  digitalWrite(suara,HIGH);
+  delay(3000);
+  myServo.write(180);
+  
+if(distance >20) {
+  myServo.write(180);
+  digitalWrite(suara,HIGH);
+}
+}
+delay(200);
+}
+
