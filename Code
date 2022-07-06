@@ -35,7 +35,7 @@ if(distance <=20) {
   delay(100);
   digitalWrite(suara,HIGH);
   delay(3000);
-  myServo.write(180);
+  myServo.write(180);//Jarak 
   
 if(distance >20) {
   myServo.write(180);
