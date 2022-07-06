@@ -1,0 +1,15 @@
+void setup() // dijalankan sekali
+{
+pinMode(7, OUTPUT); // pin 7(led Hijau) sebagai digital output
+pinMode(8, OUTPUT); // pin 8(led Merah) sebagai digital output
+}
+
+void loop() // dijalankan berulang terus menerus
+{
+digitalWrite(7, HIGH); // Led Hijau nyala
+digitalWrite(8, LOW); // Led Merah mati
+delay(1000); // Tunggu selama 1000 millisecond/1 detik
+digitalWrite(7, LOW); // Led Hijau mati
+digitalWrite(8, HIGH); // Led Merah nyala
+delay(1000); // Tunggu selama 1000 millisecond/1 detik
+}
