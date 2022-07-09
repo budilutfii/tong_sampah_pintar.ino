@@ -2,7 +2,7 @@
 </p>
 
 
-## Repo Ini Cocok Untuk Yang Ingin Belajar Dasar Arduino
+## Repo Ini Hanya Untuk Tutorial Dasar Arduino
 * Dasar LCD I2C
 * Dasar Running Led Dengan Arduino
 * Dasar RFID
