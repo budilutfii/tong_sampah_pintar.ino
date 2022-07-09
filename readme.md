@@ -2,7 +2,8 @@
 </p>
 
 
-## Tester Bot
-* Jika kamu menemukan bug jangan lupa buka Issues
-* Info Lebih Lanjut, Chat [owner-Shiraori](https://wa.me/6281351047727)
-* Kamu bisa testing fitur ShiraoriBOT [disini](https://wa.me/62895803135347?text=.menu)
+## Repo Ini Cocok Untuk Yang Ingin Belajar Dasar Arduino
+* Dasar LCD I2C
+* Dasar Running Led Dengan Arduino
+* Dasar RFID
+* Dan Lain Lain
