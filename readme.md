@@ -8,7 +8,7 @@
 * Dasar RFID
 * Dan Lain Lain
  
-<a href="https://www.instagram.com/amirul.dev" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
+<a href="https://www.instagram.com/budilutfii" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=budilutfii&show_icons=true)
 <br>
