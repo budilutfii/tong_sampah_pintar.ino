@@ -7,3 +7,7 @@
 * Dasar Running Led Dengan Arduino
 * Dasar RFID
 * Dan Lain Lain
+
+![github stats](https://github-readme-stats.vercel.app/api?username=budilutfii&show_icons=true)
+<br>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=budilutfii&theme=vue">
