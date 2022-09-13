@@ -1,0 +1,25 @@
+const int Relay = 2;
+int sound_sensor =A0;
+ 
+void setup(){
+pinMode (Relay, OUTPUT);
+digitalWrite(Relay,LOW);
+}
+ 
+void loop() {
+int bacasensor = analogRead(sound_sensor);
+if (bacasensor > 85){
+delay(150);
+ 
+//perulangan yang terus menerus
+while(true){
+digitalWrite(Relay, HIGH);
+int bacasensor = analogRead(sound_sensor);
+if(bacasensor>85){break;}
+}
+delay(150);
+}
+else{
+digitalWrite(Relay, LOW);
+}
+}
