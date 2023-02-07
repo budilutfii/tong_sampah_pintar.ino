@@ -1,0 +1,38 @@
+/* WWW.MASAHEN.COM */
+ 
+#define led 10 //Membuat variabel LED ke-pin 10
+#define echoPin 11 //Membuat variabel Echo ke-pin 11
+#define trigPin 12 //Membuat variabel Trig ke-pin 12
+long duration, distance; //Membuat variabel untuk durasi dan jarak
+ 
+void setup() {
+  Serial.begin (9600); //Berfungsi untuk komunikasi serial dengan komputer
+  pinMode(trigPin, OUTPUT); //Set varibel trigPin sebagai output
+  pinMode(echoPin, INPUT); //Set variabel echoPin sebagai input
+  pinMode(led, OUTPUT); //Set variabel led sebagai output
+}
+ 
+void loop() {
+  //Program agar Trig mengirim sinyal ultrasonik
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+ 
+  duration = pulseIn(echoPin, HIGH); //Echo menerima sinyal ultrasonik
+  distance = (duration/2)/29.1; //Rumus mengubah durasi menjadi jarak (cm)
+ 
+  //Program jika jarak kurang dari 10 CM maka LED akan menyala
+  if(distance<=10){
+    digitalWrite(led, HIGH);
+  }else{
+    digitalWrite(led, LOW);
+  }
+ 
+  //Meanmpilkan jarak di serial monitor dengan jeda 0.05 detik
+  Serial.print(distance);
+  Serial.println(" cm");
+  delay(5);
+}
