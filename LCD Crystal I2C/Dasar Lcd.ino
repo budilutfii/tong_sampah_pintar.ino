@@ -4,7 +4,7 @@ LiquidCrystal_I2C lcd(0x3F,16,2);  // Kalau gagal ganti 0x3F ke 0x27 for a 16 ch
 
 void setup()
 {
-  lcd.init();                      // initialize the lcd 
+  lcd.init();//  Kalau Gagal Ganti  "lcd.begin();"
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(0,0);
