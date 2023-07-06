@@ -1,0 +1,52 @@
+#include <DS3231.h>
+#include <Servo.h>                     
+DS3231 rtc(SDA,SCL);
+
+const int relay=A3;
+int lampu=8;
+bool on=LOW;
+bool off=HIGH;
+String hari;
+String waktu;
+String tanggal;
+
+Servo servo1;
+
+void setup() {
+  rtc.begin();
+  Serial.begin(9600);
+  servo1.attach(8);
+  pinMode(relay,OUTPUT);
+  pinMode(lampu,OUTPUT);
+  digitalWrite(relay,off);
+  servo1.write(20);
+// rtc.setDOW(THURSDAY);
+//rtc.setTime(00,33,10);
+  //    rtc.setDate(13,04,2023);
+}void loop() {
+ 
+  hari=rtc.getDOWStr();
+  waktu=rtc.getTimeStr();
+  tanggal=rtc.getDateStr();
+  Serial.println(waktu);
+  Serial.println(hari);
+  Serial.println(tanggal);
+  Serial.println("----------");
+  if(waktu >="06:00:00"&&waktu <= "17:00:00"){
+    pinMode(relay,LOW);
+    delay(1000);//mati
+
+    
+       
+  }  else {
+    pinMode(relay,HIGH);
+    delay(1000);//nyala
+
+    
+   }
+  digitalWrite(lampu,HIGH);
+  delay(1000);
+  digitalWrite(lampu,LOW);
+   
+delay(1000);
+    }
