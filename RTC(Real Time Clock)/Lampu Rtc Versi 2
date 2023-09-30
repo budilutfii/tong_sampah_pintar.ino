@@ -1,0 +1,46 @@
+#include <DS3231.h>                   
+DS3231 rtc(SDA,SCL);
+
+int relay=8;
+int lampu=12;
+bool on=LOW;
+bool off=HIGH;
+String hari;
+String waktu;
+String tanggal;
+
+void setup() {
+  rtc.begin();
+  Serial.begin(9600);
+  pinMode(relay,OUTPUT);
+  pinMode(lampu,OUTPUT);
+//  digitalWrite(relay,off);
+ //rtc.setDOW(SATURDAY);
+//rtc.setTime(10,35,20);
+   //   rtc.setDate(29,07,2023);
+}void loop() {
+ 
+  hari=rtc.getDOWStr();
+  waktu=rtc.getTimeStr();
+  tanggal=rtc.getDateStr();
+  Serial.println(waktu);
+  Serial.println(hari);
+  Serial.println(tanggal);
+  Serial.println("----------");
+  if(waktu >= "06:00:00" &&waktu <= "16:10:00"){
+    pinMode(relay,LOW);
+    delay(1000);//mati
+
+    
+       
+  }  else {
+    pinMode(relay,HIGH);
+    delay(1000);//nyala
+
+    
+   }
+  digitalWrite(lampu,HIGH);
+  delay(1000);
+   digitalWrite(lampu,LOW);
+   delay(1000);
+    }
